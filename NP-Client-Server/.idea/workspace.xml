@@ -19,6 +19,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1l79Spi2QhTiLTKaU7c59oEhwFL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -96,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606937264185</updated>
       <workItem from="1606937266892" duration="31570000" />
-      <workItem from="1607018956831" duration="565000" />
+      <workItem from="1607018956831" duration="811000" />
     </task>
     <task id="LOCAL-00001" summary="Add some changes">
       <created>1607019341258</created>
@@ -119,7 +120,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607019456661</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add some changes">
+      <created>1607019530458</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607019530458</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add some changes">
+      <created>1607019605144</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607019605144</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,10 +158,10 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="744" y="494" key="#xdebugger.evaluate/62.0.1858.1080@62.0.1858.1080" timestamp="1607000498517" />
-    <state x="479" y="134" key="CommitChangelistDialog2" timestamp="1607019530059">
+    <state x="479" y="134" key="CommitChangelistDialog2" timestamp="1607019772179">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="479" y="134" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1607019530059" />
+    <state x="479" y="134" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1607019772179" />
     <state x="771" y="294" key="FileChooserDialogImpl" timestamp="1606994770390">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -187,18 +202,18 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1815" height="289" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1607002168109" />
-    <state x="583" y="261" key="Vcs.Push.Dialog.v2" timestamp="1607019533717">
+    <state x="583" y="261" key="Vcs.Push.Dialog.v2" timestamp="1607019776127">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="583" y="261" key="Vcs.Push.Dialog.v2/62.0.1858.1080@62.0.1858.1080" timestamp="1607019533717" />
+    <state x="583" y="261" key="Vcs.Push.Dialog.v2/62.0.1858.1080@62.0.1858.1080" timestamp="1607019776127" />
     <state x="638" y="154" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1607012754323">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="638" y="154" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/62.0.1858.1080@62.0.1858.1080" timestamp="1607012754323" />
-    <state x="800" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607019389161">
+    <state x="800" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607019742089">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="800" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/62.0.1858.1080@62.0.1858.1080" timestamp="1607019389161" />
+    <state x="800" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/62.0.1858.1080@62.0.1858.1080" timestamp="1607019742089" />
     <state x="622" y="242" width="737" height="596" key="find.popup" timestamp="1607017778328">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
