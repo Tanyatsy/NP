@@ -251,10 +251,10 @@ Each message that sends is encrypted and decrypted in this way:
                 String decryptedPayload = AES.decrypt(payload, "Burlacu");
 ```
 Example Server:
-![Alt text](NP-Client-Server\Images\AES.png)
+![img](Images\AES.png)
 
 Example Client:
-![Alt text](NP-Client-Server\Images\AES_1.png)
+![img](Images\AES_1.png)
 
 -------------------------
 
