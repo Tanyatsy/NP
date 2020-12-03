@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20ebfe09-abcb-4234-8218-ab862ee0e5a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udp3/AES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/udp3/HttpServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/udp3/Packet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UDPClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/udp3/UDPClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UDPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/udp3/UDPServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +20,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1l79Spi2QhTiLTKaU7c59oEhwFL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -101,6 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606937264185</updated>
       <workItem from="1606937266892" duration="31570000" />
+      <workItem from="1607018956831" duration="318000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 #Second lab at network programming(Client-Server Project)
   
-  ## Table of contents
+  ##Table of contents
   
   * [Task Description](#task-description)
       * [Server](#server) 
@@ -11,13 +11,13 @@
   * [Implementation](#implementation)
   * [How to use](#how-to-use)
   
-## Task Description
+##Task Description
 In this project we should implemented a protocol stack, namely a transport protocol based on UDP, a session-level security protocol inspired by SSL/TLS, and an application-level protocol.
 You must present this project as a client and a server, both using a library that contains the protocol logic.
 The library must be made up of 3 modules, for each level of the protocol stack, with a well-defined API and that adheres to the layered architecture.
 For transport and session level protocols the BSD Sockets API is a recommended source of inspiration, while for the application-level protocol something that resembles an HTTP client API is a recommended source of inspiration.
 
-## File List
+##File List
 - HttpServerApplication.java
 - UDPClient.java
 - UDPServer.java
@@ -25,7 +25,7 @@ For transport and session level protocols the BSD Sockets API is a recommended s
 - AES.java
 
 
-## Implementation 
+##Implementation 
 
 I have the following features implemented in my project :
 * Client
@@ -41,7 +41,7 @@ This HTTP client API have been based on file manager example between client ans 
 
 ---------------------
 
-####Server
+##Server
 
 My server is being initialized in the HttpServerApplication.java class where we can set a port number and any directory for the file managing.
 So after we run the program, it reads user input, where we can figure out the port number Ex.(-p 8080) or out file directory path Ex.(-d C:\Users\tanya\HttpServerApplication.java)
@@ -117,7 +117,7 @@ The receive( ) method writes datagram packet from the channel into a ByteBuffer.
 Also there are implemented methods for "3 way handshake" in order to make reliable UDP protocol to guarantee packet transmission.
 
 --------------------
-####Client
+##Client
 
 Get request
 It accepts client request as a parameter. Written request is split by spaces and analyzed on header presence. 
@@ -186,7 +186,7 @@ Post request (Similar to the GET request)
 Request is split by spaces and analyzed on header and directory presence. We need to specify directory in order to create a file in which later we will be able to post data that we are sending.
 After that http request payload is constructed. Three-way handshake described above is done. Now we can send our payload to the server. 
 -------------
-####Packets
+##Packets
  
  So this part was very interesting.
  Each packet has their own properties:
@@ -234,7 +234,7 @@ After execution of specific method each packet obtains defined"packet type":
 Obviously sequenceNumber++; increases of each packet.
  
 --------------------
-####Encryption algorithm
+##Encryption algorithm
 
 In order to encrypt my data in the packets despite default decryption I have used AES(Advanced Encryption Standard).
 AES is block cipher capable of handling 128 bit blocks, using keys sized at 128, 192, and 256 bits. Each cipher encrypts and decrypts data in blocks of 128 bits using cryptographic keys of 128-, 192- and 256-bits, respectively. It uses the same key for encrypting and decrypting, so the sender and the receiver must both know — and use — the same secret key.
@@ -247,10 +247,10 @@ Each message that sends is encrypted and decrypted in this way:
                 String decryptedPayload = AES.decrypt(payload, "Burlacu");
 ```
 Example Server:
-![Alt text](Images\AES.png)
+![Alt text](NP-Client-Server\Images\AES.png)
 
 Example Client:
-![Alt text](Images\AES_1.png)
+![Alt text](NP-Client-Server\Images\AES_1.png)
 -------------------------
 
 
