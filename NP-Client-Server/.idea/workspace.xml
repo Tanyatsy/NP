@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20ebfe09-abcb-4234-8218-ab862ee0e5a4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,12 +96,38 @@
       <option name="presentableId" value="Default" />
       <updated>1606937264185</updated>
       <workItem from="1606937266892" duration="31570000" />
-      <workItem from="1607018956831" duration="318000" />
+      <workItem from="1607018956831" duration="565000" />
     </task>
+    <task id="LOCAL-00001" summary="Add some changes">
+      <created>1607019341258</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607019341258</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add some changes">
+      <created>1607019395508</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607019395508</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add some changes">
+      <created>1607019456661</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607019456661</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add some changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add some changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="760" y="342" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606940600806">
@@ -116,10 +143,10 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="744" y="494" key="#xdebugger.evaluate/62.0.1858.1080@62.0.1858.1080" timestamp="1607000498517" />
-    <state x="479" y="134" key="CommitChangelistDialog2" timestamp="1607019395109">
+    <state x="479" y="134" key="CommitChangelistDialog2" timestamp="1607019456263">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="479" y="134" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1607019395109" />
+    <state x="479" y="134" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1607019456263" />
     <state x="771" y="294" key="FileChooserDialogImpl" timestamp="1606994770390">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -160,10 +187,10 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1815" height="289" key="GridCell.Tab.1.right/62.0.1858.1080@62.0.1858.1080" timestamp="1607002168109" />
-    <state x="583" y="261" key="Vcs.Push.Dialog.v2" timestamp="1607019396718">
+    <state x="583" y="261" key="Vcs.Push.Dialog.v2" timestamp="1607019458109">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="583" y="261" key="Vcs.Push.Dialog.v2/62.0.1858.1080@62.0.1858.1080" timestamp="1607019396718" />
+    <state x="583" y="261" key="Vcs.Push.Dialog.v2/62.0.1858.1080@62.0.1858.1080" timestamp="1607019458109" />
     <state x="638" y="154" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1607012754323">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
