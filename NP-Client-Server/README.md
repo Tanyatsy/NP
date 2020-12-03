@@ -117,7 +117,7 @@ The receive( ) method writes datagram packet from the channel into a ByteBuffer.
 Also there are implemented methods for "3 way handshake" in order to make reliable UDP protocol to guarantee packet transmission.
 
 --------------------
-##Client
+#### Client
 
 Get request
 It accepts client request as a parameter. Written request is split by spaces and analyzed on header presence. 
@@ -186,7 +186,7 @@ Post request (Similar to the GET request)
 Request is split by spaces and analyzed on header and directory presence. We need to specify directory in order to create a file in which later we will be able to post data that we are sending.
 After that http request payload is constructed. Three-way handshake described above is done. Now we can send our payload to the server. 
 -------------
-##Packets
+#### Packets
  
  So this part was very interesting.
  Each packet has their own properties:
@@ -234,7 +234,7 @@ After execution of specific method each packet obtains defined"packet type":
 Obviously sequenceNumber++; increases of each packet.
  
 --------------------
-##Encryption algorithm
+#### Encryption algorithm
 
 In order to encrypt my data in the packets despite default decryption I have used AES(Advanced Encryption Standard).
 AES is block cipher capable of handling 128 bit blocks, using keys sized at 128, 192, and 256 bits. Each cipher encrypts and decrypts data in blocks of 128 bits using cryptographic keys of 128-, 192- and 256-bits, respectively. It uses the same key for encrypting and decrypting, so the sender and the receiver must both know — and use — the same secret key.
