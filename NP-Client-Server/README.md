@@ -1,6 +1,6 @@
 #Second lab at network programming(Client-Server Project)
   
-  ##Table of contents
+  ## Table of contents
   
   * [Task Description](#task-description)
       * [Server](#server) 
@@ -11,13 +11,13 @@
   * [Implementation](#implementation)
   * [How to use](#how-to-use)
   
-##Task Description
+## Task Description
 In this project we should implemented a protocol stack, namely a transport protocol based on UDP, a session-level security protocol inspired by SSL/TLS, and an application-level protocol.
 You must present this project as a client and a server, both using a library that contains the protocol logic.
 The library must be made up of 3 modules, for each level of the protocol stack, with a well-defined API and that adheres to the layered architecture.
 For transport and session level protocols the BSD Sockets API is a recommended source of inspiration, while for the application-level protocol something that resembles an HTTP client API is a recommended source of inspiration.
 
-##File List
+## File List
 - HttpServerApplication.java
 - UDPClient.java
 - UDPServer.java
@@ -25,7 +25,7 @@ For transport and session level protocols the BSD Sockets API is a recommended s
 - AES.java
 
 
-##Implementation 
+## Implementation 
 
 I have the following features implemented in my project :
 * Client
@@ -41,7 +41,7 @@ This HTTP client API have been based on file manager example between client ans 
 
 ---------------------
 
-##Server
+#### Server
 
 My server is being initialized in the HttpServerApplication.java class where we can set a port number and any directory for the file managing.
 So after we run the program, it reads user input, where we can figure out the port number Ex.(-p 8080) or out file directory path Ex.(-d C:\Users\tanya\HttpServerApplication.java)
