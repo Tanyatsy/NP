@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class HttpServerApplication {
 	
-	public static void main(String[] args) throws IOException{ 
+	public static void main(String[] args) throws IOException, InterruptedException {
 
 		int port = 8080; // Default port number
 		String directory = "C:\\Users\\tanya\\Documents\\University\\ServerClient Lab\\UDP-Client-Server-Application"; // Default directory

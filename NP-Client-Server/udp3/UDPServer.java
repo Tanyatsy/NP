@@ -1,23 +1,18 @@
 package udp3;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.InetSocketAddress;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.net.SocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.DatagramChannel;
+import java.util.Random;
 import java.util.Scanner;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class UDPServer {
 
@@ -167,8 +162,8 @@ public class UDPServer {
         serverResponse = null;
     }
 
-    public void listenAndServe( int port, String directory) throws IOException {
-
+    public void listenAndServe( int port, String directory) throws IOException, InterruptedException {
+        boolean isQuit = true;
         try (DatagramChannel channel = DatagramChannel.open()) {
             channel.bind(new InetSocketAddress(port));
 
@@ -178,8 +173,8 @@ public class UDPServer {
                     .allocate(Packet.MAX_LEN)
                     .order(ByteOrder.BIG_ENDIAN);
 
-            for (; ; ) {
-                buf.clear();
+        while (isQuit) {
+            buf.clear();
                 SocketAddress router = channel.receive(buf);
 
                 // Parse a packet from the received raw data.
@@ -188,13 +183,12 @@ public class UDPServer {
                 buf.flip();
 
                 // DATA REQUEST
-                if (packet.getType() == 0) {
-
+            switch (packet.getType()) {
+                case 0: {
                     reset();
 
                     String[] splitClientPayload;
                     String[] splitClientPayload2;
-
 
                     String payload = new String(packet.getPayload(), UTF_8);
                     String decryptedPayload = AES.decrypt(payload, "Burlacu");
@@ -229,26 +223,118 @@ public class UDPServer {
                             .setPayload(encryptedServerResp.getBytes())
                             .create();
                     channel.send(resp.toBuffer(), router);
+                    break;
                 }
-
-                // CONNECTION REQUEST
-                if (packet.getType() == 1) {
+                 // CONNECTION REQUEST
+                case 1: {
                     System.out.println("SERVER: Sending back syn ack");
                     Packet resp = packet.toBuilder()
                             .setType(2)
                             .create();
                     channel.send(resp.toBuffer(), router);
+                    break;
                 }
 
                 // CLOSING REQUEST
-                if (packet.getType() == 3) {
+                case 3: {
                     System.out.println("SERVER: Sending back FYN-ACK");
                     Packet resp = packet.toBuilder()
                             .setType(4)
                             .create();
                     channel.send(resp.toBuffer(), router);
+                    break;
                 }
-
+                // SMTP READY RESPONSE
+                case 5: {
+                    String serverResp = "220 Server ready";
+                    Packet resp = packet.toBuilder()
+                            .setPayload(serverResp.getBytes())
+                            .create();
+                    channel.send(resp.toBuffer(), router);
+                    break;
+                }
+                // SMTP HELO RESPONSE
+                case 6: {
+                    String serverResp = "250 Server hello to client";
+                    Packet resp = packet.toBuilder()
+                            .setPayload(serverResp.getBytes())
+                            .create();
+                    channel.send(resp.toBuffer(), router);
+                    break;
+                }
+                case 7: {
+                    // SMTP SENDER OK
+                    reset();
+                    String payload = new String(packet.getPayload(), UTF_8);
+                    if (payload.startsWith("MAIL FROM:")) {
+                        SMTPSender.from = payload.substring(payload.indexOf(":") + 1).trim();
+                    }
+                    String serverResp;
+                    if(payload.contains("@") && payload.contains(".")) {
+                         serverResp = "250 Sender OK";
+                    }else {
+                        serverResp = "501 Sender is not valid";
+                    }
+                    Packet resp = packet.toBuilder()
+                            .setPayload(serverResp.getBytes())
+                            .create();
+                    channel.send(resp.toBuffer(), router);
+                    break;
+                }
+                case 8: {
+                    // SMTP RECIPIENT OK
+                    reset();
+                    String payload = new String(packet.getPayload(), UTF_8);
+                    if (payload.startsWith("RCPT TO:")) {
+                        SMTPSender.to = payload.substring(payload.indexOf(":") + 1).trim();
+                    }
+                    String serverResp;
+                    if(payload.contains("@") && payload.contains(".")) {
+                        serverResp = "250 Recipient OK";
+                    }else {
+                        serverResp = "501 Recipient is not valid";
+                    }
+                    Packet resp = packet.toBuilder()
+                            .setPayload(serverResp.getBytes())
+                            .create();
+                    channel.send(resp.toBuffer(), router);
+                    break;
+                }
+                case 9: {
+                    // SMTP SEND EMAIL
+                    reset();
+                    String payload = new String(packet.getPayload(), UTF_8);
+                    if (payload.startsWith("DATA")) {
+                        SMTPSender.sendEmail();
+                    }
+                    long generatedLong = new Random().nextLong();
+                    String serverResp = "354 Send mail with ID: " + String.valueOf(generatedLong);
+                    Packet resp = packet.toBuilder()
+                            .setPayload(serverResp.getBytes())
+                            .setType(10)
+                            .create();
+                    channel.send(resp.toBuffer(), router);
+                    Thread.sleep(500);
+                    String serverResponseAfterSend = "250 Message accepted";
+                    Packet resp1 = packet.toBuilder()
+                            .setType(11)
+                            .setPayload(serverResponseAfterSend.getBytes())
+                            .create();
+                    channel.send(resp1.toBuffer(), router);
+                    break;
+                }
+                case 12: {
+                    // SMTP CLOSE SERVER
+                    reset();
+                    String serverResp = "221 Server closing";
+                    Packet resp = packet.toBuilder()
+                            .setPayload(serverResp.getBytes())
+                            .create();
+                    channel.send(resp.toBuffer(), router);
+                    isQuit = false;
+                    break;
+                }
+            }
             }
         }
     }

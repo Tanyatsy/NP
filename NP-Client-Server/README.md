@@ -9,6 +9,7 @@
       * [Encryption](#encryption-algorithm)
   * [File List](#file-list)
   * [Implementation](#implementation)
+  * [SMTP Implementation](#smtp-protocol-implementation)
   * [How to use](#how-to-use)
   
 ## Task Description
@@ -258,7 +259,42 @@ Example Client:
 
 -------------------------
 
+## SMTP protocol implementation
+SMTP (Simple Mail Transfer Protocol) is used to transfer email messages. SMTP operates in client-server mode for reliable transfer of data. 
 
+The protocol simulation deals with the main commands (sent in approximately the order below):
+- HELO: names the client (the spelling is deliberate)
+- MAIL FROM: names the sender
+- RCPT TO: names a recipient
+- DATA: asks to send message data
+- Mail Message: sends the message data
+- QUIT: finishes the mail session
+
+The simulation supports a limited range of response codes:
+- 220 Server ready: a connection to the server has been made and the server is ready
+- 221 Server closing: the server accepted the QUIT command and is ready to close the connection
+- 250 OK: the server accepted the command (one of several similar responses)
+- 354 Send mail: the server accepted the DATA command and is waiting for the Mail Message
+- 550 Invalid: the server rejected the command (one of several similar responses)
+
+After the client connects to the server using TCP, the server reports its readiness with a 220 Server ready response. 
+
+The client names itself in HELO, to which the server normally gives a 250 Server hello to client response.
+
+To send mail, the client issues MAIL FROM and normally gets a 250 Sender OK response.
+Recipients are named in RCPT TO, normally obtaining 250 Recipient OK responses. 
+However the server can reject a sender or recipient with a 550 Sender invalid or 550 Recipient invalid response.
+
+Once all parties have been named, the client sends DATA to begin message transmission; 
+a 354 Send mail response is expected from the server. 
+At this point, the real protocol would send the lines of the message followed by a full stop. 
+In the simulation, a single Mail Message command stands for this. 
+
+The server will normally give a 250 Message accepted response and further messages can be sent. 
+Finally, the client sends QUIT and the server responds with a 221 Server closing code. 
+At this point the connection is broken.
+
+-------------------------
 ## How to use
 - Run first HTTPServerApplication.java class. In console write your directory with files which would like to manage "-d C:\\..." 
 - Run second UDPClient.java class and in console write yor desired command is following format "post/get -h 'header' -d 'body' nameOfTheFile"

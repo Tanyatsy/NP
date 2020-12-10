@@ -1,4 +1,4 @@
-#Second lab at network programming(Client-Server Project)
+# Second lab at network programming(Client-Server Project)
   
   ## Table of contents
   
@@ -41,7 +41,7 @@ This HTTP client API have been based on file manager example between client ans 
 
 ---------------------
 
-####Server
+#### Server
 
 My server is being initialized in the HttpServerApplication.java class where we can set a port number and any directory for the file managing.
 So after we run the program, it reads user input, where we can figure out the port number Ex.(-p 8080) or out file directory path Ex.(-d C:\Users\tanya\HttpServerApplication.java)
@@ -51,46 +51,42 @@ The main logic is included in the UDPServer.java class.
 The java.nio.channels.DatagramChannel class does not have any public constructors. 
 Instead, I have created a new DatagramChannel object using the static open( ) method.
 This channel is not initially bound to any port. To bind it, you need to access the channel's peer
-DatagramSocket object using the socket( ) method:
+DatagramSocket object using the socket:
 ```
  public void listenAndServe( int port, String directory) throws IOException {
         try (DatagramChannel channel = DatagramChannel.open()) {
             channel.bind(new InetSocketAddress(port));
-
             System.out.println("" + channel.getLocalAddress());
-
             ByteBuffer buf = ByteBuffer
                     .allocate(Packet.MAX_LEN)
                     .order(ByteOrder.BIG_ENDIAN);
-
-
 ```
 We start to listen to any client request. 
 Also I have used ByteBuffer for my all data.
-The receive( ) method reads one datagram packet from the channel into a ByteBuffer.
+The receive( ) method writes datagram packet from the channel into a ByteBuffer.
 ```
-                 buf.clear();
+                buf.clear();
                 SocketAddress router = channel.receive(buf);
-
                 // Parse a packet from the received raw data.
                 buf.flip();
                 Packet packet = Packet.fromBuffer(buf);
                 buf.flip();
 ```
- In order to parse received data I implemented fromBuffer( ) method, which creates a packet from the given ByteBuffer in BigEndian.
- So any client message is handled and encrypted due to the server.
+ In order to parse received data I implemented fromBuffer( ) method, which creates a packet from the given ByteBuffer to BigEndian.
+ So any client message is being handled and encrypted due to the server.
  
- Therefore, the main idea of my project to show Http client api with UDP Server, I have preformed methods which analyse http requests and implement file managing:
+ Therefore, the main idea of my project is to show how Http client api working with UDP Server, I have preformed methods which analyse http requests and implement file managing:
  * POST file with text 
  * GET file with text
- * UPDATE existed file with text
+ * UPDATE(Post) existed file with text(post includes update methods too)
  
  **HTTP parser**
- It has very simple logic in order to simulate basis of API requests.
+ It has very simple logic in order to simulate basic operations of HTTP API requests.
  
  Client sends request
  
- (like string "post -h headesEx. -d body1 test.txt")  which is converted into -->  (POST test.txt HTTP\1.0\headesEx.-d\\body1) 
+ like string
+ ("post -h headesEx. -d body1 test.txt")  which is converted into -->  (POST test.txt HTTP\1.0\headesEx.-d\\body1) 
  
  and server sends response in the following form(using postResponse( ) and getResponse( ) methods):
  
@@ -118,10 +114,11 @@ The receive( ) method reads one datagram packet from the channel into a ByteBuff
 
                     System.out.println("SERVER: Sending this message to client: " + serverResponse);
 ```
-Also there are implemented methods for "3 way handshake" in order to make UDP protocol reliable to guarantee packet transmission
+Also there are implemented methods for "3 way handshake" in order to make reliable UDP protocol to guarantee packet transmission.
 
 --------------------
-####Client
+
+#### Client
 
 Get request
 It accepts client request as a parameter. Written request is split by spaces and analyzed on header presence. 
@@ -185,9 +182,14 @@ Otherwise, connection can be identified as terminated.
                             .create();
                     channel.send(resp.toBuffer(), router);
 ```
+Post request (Similar to the GET request)
+
+Request is split by spaces and analyzed on header and directory presence. We need to specify directory in order to create a file in which later we will be able to post data that we are sending.
+After that http request payload is constructed. Three-way handshake described above is done. Now we can send our payload to the server. 
 
 -------------
-####Packets
+
+#### Packets
  
  So this part was very interesting.
  Each packet has their own properties:
@@ -213,7 +215,7 @@ I have wrote methods which Create a byte buffer in BigEndian for the packet.
 ```
 
 Also all the packets with different packet type is directly followed by the payload data.
-After execution of specific method each packet obtains "packet type":
+After execution of specific method each packet obtains defined"packet type":
 ```
  Packet p = new Packet.Builder()
                         .setType(0) //sending get request
@@ -232,12 +234,13 @@ After execution of specific method each packet obtains "packet type":
                         .setPayload(msg.getBytes())
                         .create();
 ```
-Obviously sequenceNumber++; of each packet increases.
+Obviously sequenceNumber++; increases of each packet.
  
 --------------------
-####Encryption algorithm
 
-In order to encrypt my data in packets despite default description I have used AES(Advanced Encryption Standard).
+#### Encryption algorithm
+
+In order to encrypt my data in the packets despite default decryption I have used AES(Advanced Encryption Standard).
 AES is block cipher capable of handling 128 bit blocks, using keys sized at 128, 192, and 256 bits. Each cipher encrypts and decrypts data in blocks of 128 bits using cryptographic keys of 128-, 192- and 256-bits, respectively. It uses the same key for encrypting and decrypting, so the sender and the receiver must both know — and use — the same secret key.
 
 All logic is implemented in AES.java class.
@@ -248,10 +251,11 @@ Each message that sends is encrypted and decrypted in this way:
                 String decryptedPayload = AES.decrypt(payload, "Burlacu");
 ```
 Example Server:
-![Alt text](Images\AES.png)
+![img](Images\AES.png)
 
 Example Client:
-![Alt text](Images\AES_1.png)
+![img](Images\AES_1.png)
+
 -------------------------
 
 
