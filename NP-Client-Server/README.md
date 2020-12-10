@@ -277,7 +277,7 @@ The simulation supports a limited range of response codes:
 - 354 Send mail: the server accepted the DATA command and is waiting for the Mail Message
 - 550 Invalid: the server rejected the command (one of several similar responses)
 
-After the client connects to the server using TCP, the server reports its readiness with a 220 Server ready response. 
+After the client connects to the server, the server reports its readiness with a 220 Server ready response. 
 
 The client names itself in HELO, to which the server normally gives a 250 Server hello to client response.
 

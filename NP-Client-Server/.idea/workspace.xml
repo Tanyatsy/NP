@@ -2,35 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20ebfe09-abcb-4234-8218-ab862ee0e5a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javax_activation_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javax_mail_1_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jar_files/activation-1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jar_files/javax.mail-1.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javax.activation-1.2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.ejb.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.jms.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.persistence.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.resource.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.transaction.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udp3/SMTPSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UDP-Client-Server-Application.iml" beforeDir="false" afterPath="$PROJECT_DIR$/UDP-Client-Server-Application.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/UDP-Client-Server-Application.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/UDP-Client-Server-Application.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/udp3/HttpServerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/udp3/HttpServerApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/udp3/UDPClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/udp3/UDPClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/udp3/UDPServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UDP-Client-Server-Application/udp3/UDPServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/udp3/HttpServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/udp3/HttpServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/udp3/UDPClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/udp3/UDPClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/udp3/UDPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/udp3/UDPServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +116,7 @@
       <workItem from="1607024643461" duration="576000" />
       <workItem from="1607072312657" duration="80000" />
       <workItem from="1607371186141" duration="7723000" />
-      <workItem from="1607442900609" duration="16714000" />
+      <workItem from="1607442900609" duration="17023000" />
     </task>
     <task id="LOCAL-00001" summary="Add some changes">
       <created>1607019341258</created>
@@ -187,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607019772772</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add smtp protocol">
+      <created>1607623904873</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607623904873</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +176,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add some changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add some changes" />
+    <MESSAGE value="Add smtp protocol" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add smtp protocol" />
   </component>
   <component name="WindowStateProjectService">
     <state x="760" y="342" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606940600806">
@@ -212,10 +193,10 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="744" y="494" width="780" height="586" key="#xdebugger.evaluate/62.0.1858.1080@62.0.1858.1080" timestamp="1607457373923" />
-    <state x="479" y="134" key="CommitChangelistDialog2" timestamp="1607019772179">
+    <state x="479" y="134" key="CommitChangelistDialog2" timestamp="1607623903830">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="479" y="134" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1607019772179" />
+    <state x="479" y="134" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1607623903830" />
     <state x="771" y="294" key="FileChooserDialogImpl" timestamp="1607457770070">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -260,10 +241,10 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="378" y="151" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1607457779369" />
-    <state x="583" y="261" key="Vcs.Push.Dialog.v2" timestamp="1607019776127">
+    <state x="583" y="261" key="Vcs.Push.Dialog.v2" timestamp="1607623916285">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="583" y="261" key="Vcs.Push.Dialog.v2/62.0.1858.1080@62.0.1858.1080" timestamp="1607019776127" />
+    <state x="583" y="261" key="Vcs.Push.Dialog.v2/62.0.1858.1080@62.0.1858.1080" timestamp="1607623916285" />
     <state x="602" y="470" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1607449887223">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
